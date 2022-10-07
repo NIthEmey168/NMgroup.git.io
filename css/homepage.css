@@ -1,0 +1,123 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: "khmer Os Siemreap";
+    text-transform: capitalize;
+    text-decoration: none;
+}
+body{
+    min-height: 100vh;
+    background: url(../img/photo_2022-10-05_12-37-32.jpg)no-repeat;
+    background-size: cover;
+}
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(14, 5, 13, 0.623);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    padding: 0px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+header .Logo{
+    font-weight: bolder;
+    font-size: 30px;
+    color: rgba(245, 229, 10, 0.829); /*សម្រាប់ផ្តល់ពណ៍នៅពេលpointerដាក់ចង្អុលទៅលើអ្វីដែលយើងកំណត់*/
+}
+header .navbar ul{
+    list-style: none;
+}
+header .navbar ul li{
+
+    position: relative;
+    float: left;
+}
+header .navbar ul li a{
+    font-size: 20px;
+    padding: 30px;
+    color: rgb(240, 236, 236);
+    display: block;
+}
+header .navbar ul li a:hover{
+    background: rgba(115, 122, 6, 0.568);
+    color: rgba(179, 240, 13, 0.904); /*សម្រាប់ដាក់ពណ៍ពេលpointer focus*/
+}
+header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: rgb(22, 19, 19); /*edite dropdown ul Start*/
+    display: none;
+}
+header .navbar ul li ul a{
+    font-size: 20px;
+    color: rgba(179, 240, 13, 0.904);
+}
+header .navbar ul li ul a:hover{
+    color: rgb(245, 69, 0);
+}
+header .navbar ul li ul{
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+header .navbar ul li ul li ul{
+    left: 200px;
+    top: 0;
+}
+header .navbar ul li:focus-within > ul,/*សម្រាប់forcus​ Drpdownពេលចុចទៅវាមិនបាត់ពីtoolbar*/
+header .navbar ul li:hover > ul{
+    display: initial;
+}
+#menu-bar{
+    display: none;
+}
+header label{
+    font-family: "khmer Os Siemreap";
+    font-size: 30px;
+    color: rgb(253, 9, 9);
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+@media(max-width:1000px){    /*កំណត់inspect on edg or chrom*/
+header{
+    padding: 20px;
+}
+header label{
+    display: initial;
+}
+header .navbar{
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: rgb(12, 12, 12);
+    border-top: 1px solid rgba(0,0,0,.1);
+    display: none;  /*សម្រាប់បិទtoolនីមួៗមិនអោយឃើញលុះត្រាតែយើងចុចលើmenu*/
+}
+header .navbar ul li{
+    width: 100%;
+}
+header .navbar ul li ul{     /*Edit​ toolbarនីមួយកុំអោយជាន់គ្នាពេលបង្រួមinspec*/
+    position:  relative;
+    width: 100%;
+}
+header .navbar ul li ul li{  /**/
+    background: rgba(70, 12, 12, 0.623);
+}
+header .navbar ul li ul li ul{
+    width: 100%;
+}
+#menu-bar:checked ~ .navbar{ /*edit ពេលដែលចុចលើmenuវានិងបង្ហាញtoolទាំងអស់មកវិញ*/
+    display: initial;
+}
+}
+
+
+
+
+
+/*edite dropdown ul End*/
